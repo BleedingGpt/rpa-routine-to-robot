@@ -1,0 +1,203 @@
+{
+  "log": 1,
+  "session": 1,
+  "n_sessions_in_log": 100,
+  "representative_session": "session 1 of 100 in log1",
+  "provenance": {
+    "generator": "export_routine.py (demo_bot)",
+    "extracted_from": "replication/Transformed_Logs_and_Results/Our/Transformed_Log_Without_Noise/transform_log1.xes",
+    "pipeline": "de-Leoni et al. (CoopIS'25) technique - replicated by our headless runner (src/run_ours.py), authors' functions.py untouched",
+    "clean_grid_run": "2026-10-27 16:01 (results/clean_ours.jsonl)",
+    "notes": "routine_1 on log1 covered all 100 sessions; this file = the exact action order the pipeline clusters into routine_1 (no hand-written steps).",
+    "pipeline_result": {
+      "log": 1,
+      "k": 1,
+      "routines": 1,
+      "empty_pct": 0.0,
+      "routine_1": {
+        "Routine": "routine_1",
+        "Traces": 100,
+        "Length": 13,
+        "Fitness": 1.0,
+        "Precision": 1.0,
+        "Generalization": 0.9,
+        "Simplicity": 1.0,
+        "F_Score": 1.0,
+        "Coverage": 1.0,
+        "Support": 0.9285714285714286,
+        "JC": 1.0,
+        "best_gt": "r1log1.pnml"
+      }
+    }
+  },
+  "actions": [
+    {
+      "seq": 1,
+      "label": "openFile_Excel_Sheet1_data_xls",
+      "source": "Excel",
+      "Label": null,
+      "Value": null,
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": "Sheet1",
+      "FileName": "data.xls"
+    },
+    {
+      "seq": 2,
+      "label": "goToUrl_www_webpage_com_Web",
+      "source": "Web",
+      "Label": null,
+      "Value": null,
+      "Column": null,
+      "Row": null,
+      "Url": "www.webpage.com",
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 3,
+      "label": "insertValue_username_Web",
+      "source": "Web",
+      "Label": "username",
+      "Value": "Frank01",
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 4,
+      "label": "insertValue_password_Web",
+      "source": "Web",
+      "Label": "password",
+      "Value": "LittleFrank123",
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 5,
+      "label": "clickButton_confirm_Web",
+      "source": "Web",
+      "Label": "confirm",
+      "Value": null,
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 6,
+      "label": "waitResponse_www_webpage_com_ok_Web",
+      "source": "Web",
+      "Label": null,
+      "Value": null,
+      "Column": null,
+      "Row": null,
+      "Url": "www.webpage.com/ok",
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 7,
+      "label": "clickButton_Button1_Web",
+      "source": "Web",
+      "Label": "Button1",
+      "Value": null,
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 8,
+      "label": "clickButton_B2_Web",
+      "source": "Web",
+      "Label": "B2",
+      "Value": null,
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 9,
+      "label": "insertValue_ID_Web",
+      "source": "Web",
+      "Label": "ID",
+      "Value": "182381",
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 10,
+      "label": "copy_B_Excel",
+      "source": "Excel",
+      "Label": null,
+      "Value": "Au 58124829 XT",
+      "Column": "B",
+      "Row": "1",
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 11,
+      "label": "paste_Special_code_Web",
+      "source": "Web",
+      "Label": "Special code",
+      "Value": "Au 58124829 XT",
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 12,
+      "label": "copy_B_Excel",
+      "source": "Excel",
+      "Label": null,
+      "Value": "Melbourne 123",
+      "Column": "B",
+      "Row": "2",
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 13,
+      "label": "paste_Area_Web",
+      "source": "Web",
+      "Label": "Area",
+      "Value": "Melbourne 123",
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    },
+    {
+      "seq": 14,
+      "label": "clickButton_OK_Web",
+      "source": "Web",
+      "Label": "OK",
+      "Value": null,
+      "Column": null,
+      "Row": null,
+      "Url": null,
+      "Sheet": null,
+      "FileName": null
+    }
+  ]
+}

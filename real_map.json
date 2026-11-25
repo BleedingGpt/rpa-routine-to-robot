@@ -1,0 +1,23 @@
+{
+  "_doc": "REAL-TARGET translation table (variant of label_map.json). Same routine.json program, different deployment target: a LIVE WordPress/Fluent-Forms page (Staff Performance Appraisal - Form A). Same 14 actions, same order, same values - only the selectors change. This is the industry RPA story: the routine is target-agnostic; the translator adapts it per environment. Excel phase still runs on the mock panel tab (it is the routine's data source); Web phase runs on the REAL page. Submit is NEVER clicked (demo safety): the robot verifies the form and hovers the Submit button only.",
+  "real_url": "https://demoform.frontiertechy.com/form-a/",
+  "map": {
+    "openFile_Excel_Sheet1_data_xls":     { "gesture": "excel_open" },
+    "goToUrl_www_webpage_com_Web":        { "gesture": "navigate" },
+    "insertValue_username_Web":           { "gesture": "type",   "target": "input[name='names[first_name]']", "target_name": "First Name",       "attend": true },
+    "insertValue_password_Web":           { "gesture": "type",   "target": "input[name='names[last_name]']",  "target_name": "Surname",         "attend": true },
+    "clickButton_confirm_Web":            { "gesture": "verify" },
+    "waitResponse_www_webpage_com_ok_Web":{ "gesture": "wait",   "target_name": "form reveal" },
+    "clickButton_Button1_Web":            { "gesture": "select", "target": "#ff_3_dropdown",   "target_name": "Job Group / Pay Scale" },
+    "clickButton_B2_Web":                 { "gesture": "select", "target": "#ff_3_dropdown_2", "target_name": "Department" },
+    "insertValue_ID_Web":                 { "gesture": "type",   "target": "#ff_3_numeric_field", "target_name": "Personal Number", "attend": false },
+    "copy_B_Excel":                       { "gesture": "excel_copy", "cell_from": "Row" },
+    "paste_Special_code_Web":             { "gesture": "paste",  "target": "#ff_3_input_text",   "target_name": "Designation" },
+    "paste_Area_Web":                     { "gesture": "paste",  "target": "#ff_3_input_text_1", "target_name": "Duty Station" },
+    "clickButton_OK_Web":                 { "gesture": "finish_hover", "target": "button.ff-btn-submit", "target_name": "Submit" }
+  },
+  "safety": {
+    "submit": "never clicked; hover + halo only",
+    "side_effects": "no key presses outside the named fields, no toggles, no date pickers"
+  }
+}

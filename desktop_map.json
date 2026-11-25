@@ -1,0 +1,113 @@
+{
+  "_doc": "DESKTOP-TARGET translation table — the SAME extracted routine.json program (14 actions, same seq order) deployed on REAL desktop apps: real Microsoft Excel (win32com), the real frontiertechy form (Playwright, submit never clicked) and a REAL Gmail compose at the end (default browser; the HUMAN clicks Send = approval gate). Excel actions live inside the spreadsheet; web actions live here. From-excel fields feed the form straight from the workbook cells, so the copy that Act 10 performs in routine.json is the exact value Act 11/13 paste. First/Last name are static demo strings in the map; Personal Number comes from cell A2; Designation + Duty Station receive the copied Row value (B2), which is why the routine copies it TWICE (seq 10 and 12).",
+  "workbook": "desktop_demo.xlsx",
+  "sheet": "data",
+  "cells": {
+    "id": "A2",
+    "row": "B2",
+    "name": "C2",
+    "audit_col": "E"
+  },
+  "mail": {
+    "_doc1": "ROBOT-SEND (primary): set smtp_user and a 16-char Gmail App Password here. The robot sends via SMTP, no browser login scene. Leave the password as PUT-... to use the fallback.",
+    "_doc2": "Fallback: blank/placeholder app password or --human-send opens Gmail compose in the default browser; a human clicks Send.",
+    "_doc3": "SECURITY: use a DEMO-ONLY Gmail account with 2FA enabled. Never commit a real App Password. Rotate any password that was ever used in a live demo.",
+    "smtp_user": "PUT-DEMO-EMAIL@gmail.com",
+    "smtp_app_password": "PUT-16-CHAR-APP-PASSWORD",
+    "to": "recipient@example.com",
+    "subject": "Automated processing of candidate 27182 - RPA demo run",
+    "body": "Hello,\n\nThe extracted robotic process just processed the following row in real Microsoft Excel, verified it against the live form, and emailed this note - all without human guidance:\n\n  - Candidate ID / personal number: [[ID]]\n\nThis demo shows a task routine MINED from a task log: the program was discovered by our pipeline, not hand-coded by anyone.\n\nBest,\nThe RPA Robot"
+  },
+  "web": {
+    "_url": "https://demoform.frontiertechy.com/form-a/",
+    "map": {
+      "1": {
+        "label": "openFile_Excel_Sheet1_data_xls",
+        "gesture": "excel_open"
+      },
+      "2": {
+        "label": "goToUrl_www_webpage_com_Web",
+        "gesture": "navigate"
+      },
+      "3": {
+        "label": "insertValue_username_Web",
+        "gesture": "type",
+        "target": "input[name='names[first_name]']",
+        "target_name": "First Name",
+        "attend": true,
+        "value": "Amir"
+      },
+      "4": {
+        "label": "insertValue_password_Web",
+        "gesture": "type",
+        "target": "input[name='names[last_name]']",
+        "target_name": "Surname",
+        "attend": true,
+        "value": "Karim Ruman"
+      },
+      "5": {
+        "label": "clickButton_confirm_Web",
+        "gesture": "verify",
+        "target": "#ff_3_dropdown",
+        "target_name": "Job Group",
+        "how": "dropdown present"
+      },
+      "6": {
+        "label": "waitResponse_www_webpage_com_ok_Web",
+        "gesture": "wait",
+        "target_name": "form sections revealing"
+      },
+      "7": {
+        "label": "clickButton_Button1_Web",
+        "gesture": "select",
+        "target": "#ff_3_dropdown",
+        "target_name": "Job Group / Pay Scale"
+      },
+      "8": {
+        "label": "clickButton_B2_Web",
+        "gesture": "select",
+        "target": "#ff_3_dropdown_2",
+        "target_name": "Department"
+      },
+      "9": {
+        "label": "insertValue_ID_Web",
+        "gesture": "type",
+        "target": "#ff_3_numeric_field",
+        "target_name": "Personal Number",
+        "from_excel": "A2"
+      },
+      "10": {
+        "label": "copy_B_Excel",
+        "gesture": "excel_copy",
+        "cell": "B2"
+      },
+      "11": {
+        "label": "paste_Special_code_Web",
+        "gesture": "paste",
+        "target": "#ff_3_input_text",
+        "target_name": "Designation"
+      },
+      "12": {
+        "label": "copy_B_Excel",
+        "gesture": "excel_copy",
+        "cell": "B2"
+      },
+      "13": {
+        "label": "paste_Area_Web",
+        "gesture": "paste",
+        "target": "#ff_3_input_text_1",
+        "target_name": "Duty Station"
+      },
+      "14": {
+        "label": "clickButton_OK_Web",
+        "gesture": "mail_compose"
+      }
+    },
+    "safety": {
+      "submit": "never clicked — hover + halo only",
+      "mail": "compose only; the human clicks Send; robot never logs into any account",
+      "excel": "real workbook; audit column E appended and SAVED so the run is persistent evidence"
+    },
+    "_doc2": "map keyed by routine.json seq (labels are non-unique: copy_B_Excel occurs at seq 10 AND 12)"
+  }
+}

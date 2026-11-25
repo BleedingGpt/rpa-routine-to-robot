@@ -1,0 +1,36 @@
+{
+  "_doc": "COMPONENT 2 - the translation table: rich routine label -> executable gesture. This is the ONLY place where log vocabulary meets UI selectors. Everything else is data-driven from routine.json (values, cells, screens). Inspectable for Q&A; brittle-by-design surface coupling is exactly what novelty items N1-N4 address at higher abstraction levels.",
+  "engines": {
+    "playwright": "demo engine (Microsoft, open source) - same role Automagica played for smartRPA (Agostinelli CiI'22)"
+  },
+  "gesture_types": {
+    "excel_open": "Excel panel boots, file content shown",
+    "navigate": "portal browser screen loads",
+    "type": "type value into element (real keystrokes); attend=true = smartRPA-style requirement point: robot pauses and highlights, human types, robot continues",
+    "click": "real Playwright click on element",
+    "wait": "spinner beat (waitResponse semantics)",
+    "excel_copy": "select Excel cell B{Row} from the log event's own Row attribute, flash copy chip",
+    "paste": "transfer clipboard value into element (paste semantics, no keystrokes)",
+    "finish": "completion banner"
+  },
+  "value_sources": {
+    "Value": "the literal value carried by this event in the log",
+    "Row": "the log event's Row attribute (for cell addressing)",
+    "clipboard": "value captured by the previous excel_copy"
+  },
+  "map": {
+    "openFile_Excel_Sheet1_data_xls": { "gesture": "excel_open" },
+    "goToUrl_www_webpage_com_Web":    { "gesture": "navigate", "url": "www.webpage.com" },
+    "insertValue_username_Web":       { "gesture": "type", "target": "#username", "value_from": "Value", "attend": true },
+    "insertValue_password_Web":       { "gesture": "type", "target": "#password", "value_from": "Value", "attend": true },
+    "clickButton_confirm_Web":        { "gesture": "click", "target": "#btn-confirm" },
+    "waitResponse_www_webpage_com_ok_Web": { "gesture": "wait", "msg": "waiting response ..." },
+    "clickButton_Button1_Web":        { "gesture": "click", "target": "#btn-button1" },
+    "clickButton_B2_Web":             { "gesture": "click", "target": "#btn-b2" },
+    "insertValue_ID_Web":             { "gesture": "type", "target": "#input-id", "value_from": "Value", "attend": false },
+    "copy_B_Excel":                   { "gesture": "excel_copy", "cell_from": "Row" },
+    "paste_Special_code_Web":         { "gesture": "paste", "target": "#fld-special", "value_from": "clipboard" },
+    "paste_Area_Web":                 { "gesture": "paste", "target": "#fld-area", "value_from": "clipboard" },
+    "clickButton_OK_Web":             { "gesture": "click", "target": "#btn-ok", "finish": true }
+  }
+}
