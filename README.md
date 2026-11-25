@@ -115,6 +115,6 @@ The U3 auto-delimiter grid on Windows ended in `MemoryError`, so no number from 
 
 ## Attribution
 
-Three-person thesis: Koushiq Chowdhury did data collection and preprocessing; Sharin Akter Shashi did sessionization, encoding, clustering, and the U2/U3 automation; Ishtiaq Ahmed did post-cluster evaluation, the 360-row noise grid, and this routine-to-robot executor.
+Three-person thesis: [@Koushiq-Sourav](https://github.com/Koushiq-Sourav) (Koushiq Chowdhury) did data collection and preprocessing; Sharin Akter Shashi did sessionization, encoding, clustering, and the U2/U3 automation; [@BleedingGpt](https://github.com/BleedingGpt) (Ishtiaq Ahmed) did post-cluster evaluation, the 360-row noise grid, and this routine-to-robot executor.
 
 Base paper: de Leoni et al., COOPIS 2025, DOI 10.1007/978-3-032-15538-2_26. This is a replication and extension, not a copy of their system.
